@@ -48,3 +48,31 @@ contains the temperature folder.
 
 10. Download the result file from the console.
     ![alt text](images/console_output.png?raw=true "console output")
+
+<br>
+
+## Extra Credit
+
+1. Create a GCP service account under the current project by following steps in the [tutorial](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account).
+
+
+2. Use the command ``export GOOGLE_APPLICATION_CREDENTIALS="KEY_PATH"`` to set the  environmenal variable for local development.
+
+
+3. Run ``glcoud init`` and select the current project. 
+
+
+4. Run ``python3 -m pip install -r requirements.txt`` to install required packages.
+
+
+5. Connect to GCP storage.
+    ```
+    from google.cloud import storage  
+    storage_client = storage.Client()
+    ```
+
+
+6. Get the bucket that is linked to the cluster, and upload files.
+    ```
+    bucket = storage_client.get_bucket('dataproc-staging-us-central1-105135044036-jlvf54fr')
+    ```
